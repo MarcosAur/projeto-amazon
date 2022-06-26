@@ -1,3 +1,24 @@
 .quantidade {
     border-radius: 4px 4px 4px 4px;
 }
+
+.footer {
+	text-align: center;
+    background: #232F3E;
+	padding: 40px 0;
+}
+
+.copyright {
+	position: absolute;
+	display: inline;
+	color: #FFFFFF;
+	text-align: center;
+	font-size: 13px;
+	width: 250px;
+	margin: 20px 0 0 40%;
+}
+
+p{
+	color: black;
+    size: 12pxs;
+}
