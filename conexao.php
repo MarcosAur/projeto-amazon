@@ -32,7 +32,7 @@ function buscarUsuario($login, $senha){
     $str_query = "SELECT * FROM `cliente` WHERE login = '$login' AND senha = '$senha'";
     $conn = mysqli_connect($host_name,$user_name,$passwd,$db_name);
     $resultado = mysqli_query($conn, $str_query);
-    $rows = mysqli_fetch_all($resultado);
+    $rows = mysqli_fetch_assoc($resultado);
     return $rows;
 }
 

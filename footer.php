@@ -39,7 +39,7 @@
                     <li>
                       <hr class="dropdown-divider">
                     </li>
-                    <li><a class="dropdown-item" href="./codigos_servidor/desconectarUser.php">Desconecte</a></li>
+                    <li><a class="dropdown-item" href="desconectarUsuario.php">Desconecte</a></li>
                   </ul>
                 </li>
               </ul>
