@@ -34,8 +34,8 @@
                     Logon
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="offcanvasNavbarDropdown">
-                    <li><a class="dropdown-item" href="/login.php">Login</a></li>
-                    <li><a class="dropdown-item" href="./views/tela_cadastro.html">Cadastre-se</a></li>
+                    <li><a class="dropdown-item" href="/tela_login.php">Login</a></li>
+                    <li><a class="dropdown-item" href="tela_cadastro.php">Cadastre-se</a></li>
                     <li>
                       <hr class="dropdown-divider">
                     </li>
