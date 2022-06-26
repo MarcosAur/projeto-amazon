@@ -92,6 +92,31 @@ function verificarExistenciaNoCarrinho($nome){
     return $num_rows;
 }
 
+function salvarCompra(){
+    $host_name = 'localhost';
+    $user_name = 'root';
+    $passwd = '';
+    $db_name = 'Clientes-teste';
+
+    $id_cliente = $_COOKIE['user_id'];
+    date_default_timezone_set("America/Fortaleza");
+    $data = date('Y-m-d G:i:s',time() );
+    $descricao = "";
+    $produtos = coletarProdutosCarrinho();
+    foreach ($produtos as $produto) {
+        $descricao .= "$produto[1]\n";
+    }
+
+    $sql_query = "INSERT INTO `compra`(`id_cliente`, `data`, `produtos`) VALUES ('$id_cliente','$data','$descricao')";
+    $conn = mysqli_connect($host_name,$user_name,$passwd,$db_name);
+    mysqli_real_query($conn, $sql_query);
+
+    $sql_query = "SELECT id FROM compra WHERE id_cliente = '$id_cliente' AND data = '$data' AND produtos = '$descricao'";
+    $resultado = mysqli_query($conn, $sql_query);
+    $rows = mysqli_fetch_assoc($resultado);
+    return $rows;
+}
+
 function coletarProdutosCarrinho(){
     $host_name = 'localhost';
     $user_name = 'root';

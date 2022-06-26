@@ -1,6 +1,14 @@
 <?php
 include_once 'conexao.php';
+
+
+$pedidos = salvarCompra();
+$id_pedido = $pedidos['id'];
+
 limparCarrinho();
-echo "<script>alert('Compra finalizada. O pacote será enviado para seu endereço no dia 35/15/1920')</script>
+
+$str_msg = "Compra finalizada Numero do Pedido: $id_pedido.";
+echo "<script>alert('$str_msg')</script>
 <meta http-equiv='refresh' content='0; url=index.php' />";
+
 ?>

@@ -15,6 +15,8 @@ if (!isset($_COOKIE['user_name'])) {
     if (count($usuario) != 0) {
         $username = $usuario['login'];
         $email = $usuario['email'];
+        $id = $usuario['id'];
+        setcookie('user_id', "$id", time() + 86400, "/");
         setcookie('user_name', "$username", time() + 86400, "/");
         setcookie('email', "$email", time() + 86400, "/");
         $redirect = 'index.php';
