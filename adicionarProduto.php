@@ -12,21 +12,20 @@ if($existe == 0){
 
     if ($adicionado){
         echo "<script>alert('Produto adicionado com sucesso')</script>";
-        include 'index.php';
+
     }else{
         echo "<script>alert('Erro ao adicionar o produto')</script>";
-        include 'index.php';
+        $redirect = 'index.php';
+        header("location:$redirect");
     }
 }else{
     $alterado = adicionarAItemExistente($nome, $qtd);
     if ($alterado){
         echo "<script>alert('Item alterado com sucesso')</script>";
-        include 'index.php';
     }else{
         echo "<script>alert('Falha ao adicionar ao carrinho')</script>";
-        include 'index.php';
     }
 }
-
+echo "<meta http-equiv='refresh' content='0; url=index.php' />";
 
 ?>

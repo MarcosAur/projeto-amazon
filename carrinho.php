@@ -33,30 +33,36 @@
     </thead>";
 
     $produtosNoCarrinho = coletarProdutosCarrinho();
-$valorTotal = 0.0;
-foreach ($produtosNoCarrinho as $produto) {
-    $id_produto = $produto[0];
-    $nome_produto = $produto[1];
-    $valor_produto = $produto[2];
-    $quant = $produto[3];
-    $subtotal = $produto[4];
-    $valorTotal += $subtotal;
-    echo "<tbody>
-    <tr>
-        <td>$id_produto</td>
-        <td>$nome_produto</td>
-        <td>R$ $valor_produto</td>
-        <td>$quant</td>
-        <td>R$ $subtotal</td>
-        <form action='deletarProduto.php' method='POST'>'<td><input name='id' value='$id_produto' hidden><button class='btn'>Excluir</button></input></td></form>
-    </tr>
-</tbody>";
-}
+    $valorTotal = 0.0;
+    foreach ($produtosNoCarrinho as $produto) {
+        $id_produto = $produto[0];
+        $nome_produto = $produto[1];
+        $valor_produto = $produto[2];
+        $quant = $produto[3];
+        $subtotal = $produto[4];
+        $valorTotal += $subtotal;
+        echo "<tbody>
+        <tr>
+            <td>$id_produto</td>
+            <td>$nome_produto</td>
+            <td>R$ $valor_produto</td>
+            <td>$quant</td>
+            <td>R$ $subtotal</td>
+            <form action='deletarProduto.php' method='POST'>'<td><input name='id' value='$id_produto' hidden><button class='btn'>Excluir</button></input></td></form>
+        </tr>
+    </tbody>";
+    }
 
-    echo "<tfoot>
-    <tr>
-        <td colspan = 6> Valor Total: R$ $valorTotal</td>
-    </tr>
-</tfoot></table>";
+        echo "<tfoot>
+        <tr>
+            <td colspan = 6> Valor Total: R$ $valorTotal</td>
+        </tr>
+    </tfoot></table>";
+
+    if (count($produtosNoCarrinho) != 0){
+        echo "    <center>
+        <a href='checkout.php'><button class='btn btn-primary'>Finalizar a compra</button></a>
+        </center>";
+    }
 
 ?>

@@ -21,6 +21,16 @@
               <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu<Menu></Menu></h5>
               <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
+            <div>
+            <?php
+            if (isset($_COOKIE['user_name'])) {
+              echo "<img src='https://i.pinimg.com/736x/59/74/d0/5974d04323d9efbaf170c72cfdb07b44.jpg' class='rounded-3' style='width: 50px;
+              alt='Avatar' />";
+              $nome = $_COOKIE['user_name'];
+              echo "<label>$nome</label>";
+            }
+            ?>
+            </div>
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">

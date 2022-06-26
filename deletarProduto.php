@@ -5,7 +5,7 @@
     $produtoDeletado = deletarProduto($id_produto);
 
     if ($produtoDeletado) {
-        echo "<script>alert('Produto deletado do carrinho')</script>";
-        include 'carrinho.php';
+        echo "<script>alert('Produto deletado do carrinho')</script>
+        <meta http-equiv='refresh' content='0; url=carrinho.php' />";
     }
 ?>

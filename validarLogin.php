@@ -17,13 +17,14 @@ if (!isset($_COOKIE['user_name'])) {
         $email = $usuario['email'];
         setcookie('user_name', "$username", time() + 86400, "/");
         setcookie('email', "$email", time() + 86400, "/");
-        include_once 'index.php';
+        $redirect = 'index.php';
+        header("location:$redirect");
     }else {
-        echo "<script>alert('Usuário não encontrado')</script>";
-        include_once 'login.php';
+        echo "<script>alert('Usuário não encontrado')</script>
+        <meta http-equiv='refresh' content='0; url=tela_login.php' />";
     }
 }else {
-    echo "<script>alert('Usuário já logado. Caso queira alterar desconecte e realize um novo login')</script>";
-        include_once 'index.php';
+    echo "<script>alert('Usuário já logado. Caso queira alterar desconecte e realize um novo login')</script>
+    <meta http-equiv='refresh' content='0; url=index.php' />";
 }
 ?>

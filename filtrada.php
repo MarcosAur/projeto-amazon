@@ -13,6 +13,7 @@
 
 <?php
 include 'topo.php';
+include 'navbar.php';
 include_once 'conexao.php';
 include_once 'utilitarios.php';
 

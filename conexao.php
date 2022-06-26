@@ -120,6 +120,16 @@ function buscarUsuario($login, $senha){
     return $rows;
 }
 
+function limparCarrinho(){
+    $host_name = 'localhost';
+    $user_name = 'root';
+    $passwd = '';
+    $db_name = 'Clientes-teste';
+    $str_query = "DELETE FROM carrinho";
+    $conn = mysqli_connect($host_name,$user_name,$passwd,$db_name);
+    $resultado = mysqli_real_query($conn, $str_query);
+}
+
 function cadastrarNovoUsuario($login, $senha, $email){
     $host_name = 'localhost';
     $user_name = 'root';

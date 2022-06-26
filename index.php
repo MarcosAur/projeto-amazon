@@ -12,6 +12,7 @@
 </html>
 <?php
 include 'topo.php';
+include 'navbar.php';
 include_once 'conexao.php';
 include 'utilitarios.php';
 

@@ -11,19 +11,20 @@
         $usuarioCriado = cadastrarNovoUsuario($login, $senha, $email);
 
         if (!$usuarioCriado) {
-            echo "<script>alert('Erro ao cadastrar usuário')</script>";
-            include 'tela_cadastro.php';
+            echo "<script>alert('Erro ao cadastrar usuário')</script>
+            <meta http-equiv='refresh' content='0; url=tela_cadastro.php' />";
         }else {
-            echo "<script>alert('Usuário cadastrado com sucesso')</script>";
             $username = $usuario['login'];
             $email = $usuario['email'];
             setcookie('user_name', "$username", time() + 86400, "/");
             setcookie('email', "$email", time() + 86400, "/");
-            include 'index.php';
+            echo "<script>alert('Usuário cadastrado com sucesso')</script>
+            <meta http-equiv='refresh' content='0; url=index.php' />";
+
         }
     }else{
-        echo "<script>alert('Usuário já foi cadastrado no banco')</script>";
-        include 'tela_cadastro.php';
+        echo "<script>alert('Usuário já foi cadastrado no banco')</script>
+        <meta http-equiv='refresh' content='0; url=tela_cadastro.php' />";
     }
 
 ?>
