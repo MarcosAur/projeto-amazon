@@ -11,14 +11,14 @@
 </head>
 </html>
 <?php
-include './auxiliares/topo.php';
-include './auxiliares/conexao.php';
-include './auxiliares/utilitarios.php';
+include 'topo.php';
+include_once 'conexao.php';
+include 'utilitarios.php';
 
 $produtos = buscarProdutos();
 $html_code = exibirProdutos($produtos);
 
 echo $html_code;
-include './auxiliares/footer.php';
+include 'footer.php';
 
 ?>

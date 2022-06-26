@@ -11,7 +11,7 @@
 
   <body class="text-center">
     <main class="form-signin w-100 m-auto">
-      <form method="POST" action="./utilitarios/validarLogin.php">
+      <form method="POST" action="validarLogin.php">
         <img class="mb-4" src="../img/amazon-icon-c.png" alt="Logo" width="120" height="80">
         <h1 style="color: white;" class="h3 mb-3 fw-normal">Insira as credenciais de login</h1>
 
